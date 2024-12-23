@@ -36,7 +36,7 @@ function consumeMessages() {
     connection.createChannel((error1, channel) => {
       if (error1) throw error1;
 
-      const queue = 'advertisement-emails';
+      const queue = 'user-notification';
 
       channel.assertQueue(queue, { durable: true });
       channel.prefetch(1); // Limit the number of unacknowledged messages
